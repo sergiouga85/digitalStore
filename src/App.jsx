@@ -5,11 +5,9 @@ import ItemListContainer from './components/itemListContainer'
 const App = () => {
   return (
     <>
-
+      
       <NavBar></NavBar>
-      <ItemListContainer
-        greeting="Bienvenidoa a mi tienda"
-      />
+      <ItemListContainer greeting="Bienvenidos a nuestra tienda digital"/>
 
     </>
   )

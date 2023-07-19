@@ -1,0 +1,71 @@
+.header{
+    background: linear-gradient(rgb(1, 1, 64), black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    color: white;
+}
+
+.menu{
+    background-color: black;
+    color: white;
+}
+
+.counter h3{
+    font-size: 16px;
+}
+
+p{
+    font-size: 35px;
+    color:rgb(1, 1, 64);
+}
+
+.mensaje{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.Brand{
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+img{
+    width: 200px;
+    height: 55px;
+}
+
+.css-k008qs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito{
+    width: 35px;
+    height: 35px;
+}
+
+@media screen and (max-width:576px) {
+
+   
+    .container{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .carrito{
+        width: 25px;
+        height: 25px;
+    }
+
+    .css-k008qs{
+        align-items: end;
+        padding-bottom: 12px;
+    }
+}

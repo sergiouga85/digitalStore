@@ -1,28 +1,24 @@
 import React from 'react'
-import{ Menu, MenuButton, Button, MenuList, MenuItem, Flex, Box, Spacer} from "@chakra-ui/react"
-import { ChevronDownIcon } from '@chakra-ui/icons'
-import CartWidget from './CartWidget'
+import { Flex, Box } from "@chakra-ui/react";
+import logo from '../assets/img/logo1.png'
+import CartWidget from './CartWidget';
+import {Nav, Navbar,Container} from 'react-bootstrap';
 
 const NavBar = () => {
     return (
-        <Flex>
-            <Box p="2" bg="Black" color="white">
-                DigitalStore
-            </Box>
-            <Spacer />
-            <Menu>
-                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                    Categories
-                </MenuButton>
-                <MenuList>
-                    <MenuItem>Category A</MenuItem>
-                    <MenuItem>Category B</MenuItem>
-                    <MenuItem>Category C</MenuItem>
-                </MenuList>
-            </Menu>
-            <Spacer />
+        <Flex className="header">
+            <Navbar bg="dark-outline" data-bs-theme="dark">
+                <Container>
+                    <Navbar.Brand href="#"><img src={logo} alt="logo" /></Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link class="link" href="#">INICIO</Nav.Link>
+                        <Nav.Link class="link" href="#">PRODUCTOS</Nav.Link>
+                        <Nav.Link class="link" href="#">CONTACTO</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
             <Box>
-                <CartWidget />
+                <CartWidget background-color="white" />
             </Box>
         </Flex>
     )
