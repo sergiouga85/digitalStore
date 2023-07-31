@@ -1,49 +1,44 @@
 .header{
     background: linear-gradient(rgb(1, 1, 64), black);
-    display: flex;
-    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 160px;
     color: white;
+    
 }
 
-.menu{
-    background-color: black;
-    color: white;
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
 .counter h3{
     font-size: 16px;
 }
 
-p{
-    font-size: 35px;
-    color:rgb(1, 1, 64);
-}
-
-.mensaje{
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-}
-
-.Brand{
-    color: white;
-    display:flex;
-    justify-content: center;
-    align-items: center;   
-}
 
 img{
-    width: 200px;
+    width: 180px;
     height: 55px;
 }
 
-.css-k008qs{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btnCard{
+    width: 350px;
+}
+
+.btnDetalles{
+    width: 250px;
+}
+
+.btnItemCount{
+    padding-top: 10px;
 }
 
 .carrito{
@@ -51,12 +46,121 @@ img{
     height: 35px;
 }
 
-@media screen and (max-width:576px) {
+.card{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width:500px;
+    
+}
 
-   
-    .container{
-        flex-direction: column;
+.cardDetailContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  40px 0px;
+}
+
+.cardDetail{
+    
+    width:500px;
+    
+}
+
+.CardFooterDetail{
+    display:Flex;
+    background-color:rgb(235, 229, 229); 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.tituloStock{
+    background-color:rgb(56, 88, 152);
+    color:white;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:260px;
+    height: 35px;
+    border-radius:5px; 
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.counter p{
+    font-size: 18px;
+}
+
+.contadorCarrito{
+    color: white;
+}
+
+.contadorCarrtio h3{
+    font-size: 5px;
+}
+
+.itemCount{
+    display: flex;
+    justify-content: center;
+}
+
+
+.imgCard{
+    width:250px;
+    height:250px;
+}
+
+.imgDetailCard{
+    width:450px;
+    height:370px;
+}
+  
+footer{
+
+    background: linear-gradient(black, rgb(1, 1, 64));
+    Display:Flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px; 
+
+}
+
+footer p{
+    color: white;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width:768px) {
+
+    .header{
         justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0px 20px;
+    }
+
+    img{
+        width: 150px;
+        height: 45px;
+    }
+
+    .navbar-brand{
+        margin-top: 20px;
     }
 
     .carrito{
@@ -64,8 +168,11 @@ img{
         height: 25px;
     }
 
-    .css-k008qs{
-        align-items: end;
-        padding-bottom: 12px;
+    footer p{
+        padding-left: 25px;
+        justify-content: center;
+        font-size: 15px;
     }
+    
+
 }

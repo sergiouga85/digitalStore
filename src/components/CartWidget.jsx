@@ -10,7 +10,7 @@ const CartWidget = () => {
             <Box>
                 <FontAwesomeIcon className="carrito" icon={faCartShopping} />
             </Box>
-            <Box class="counter">
+            <Box className="contadorCarrito">
                 <h3>5</h3>
             </Box>
         </Flex>
