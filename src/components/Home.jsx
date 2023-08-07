@@ -1,6 +1,5 @@
 import React from 'react'
-import {useParams} from 'react-router-dom'
-import ItemList from './ItemList'
+import ItemHome from './ItemHome'
 import {Flex} from "@chakra-ui/react"
 import arduinoUno from '../assets/img/arduinoUno.jpg'
 import arduinoNano from '../assets/img/arduinoNano.jpg'
@@ -16,10 +15,8 @@ import kitparaSoldar from '../assets/img/KitParaSoldar.jpg'
 import KitDestornilladores from '../assets/img/KitDestornilladoresProskit.jpg'
 
 
-const ItemListContainer = () => {
+const Home = () => {
 
-  const {categoria}=useParams();
- 
   const productos= [
 
     {id:1, nombre: "Arduino Uno", categoria: "Placas de Desarrollo", descripcion:"Placa Electronica de Desarrollo", imagen: arduinoUno,precio:5500, stock:10},
@@ -54,16 +51,17 @@ const ItemListContainer = () => {
       console.log(Error)
     })
 
-  const filteredproductcat= productos.filter((producto)=>producto.categoria===categoria)
-  console.log(filteredproductcat);
-    
+
 
   return (
-    <Flex className="main">
-      <ItemList productos={filteredproductcat}></ItemList>
-    </Flex>
-    
+    <div>
+        <Flex className="main">
+          <ItemHome productos={productos}></ItemHome>
+        </Flex>
+        
+      
+    </div>
   )
 }
 
-export default ItemListContainer
+export default Home

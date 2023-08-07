@@ -93,7 +93,7 @@ img{
     justify-content: center;
     align-items: center;
     background-color: white;
-    width:260px;
+    width:50px;
     height: 35px;
     border-radius:5px; 
     padding-top: 25px;
@@ -126,6 +126,15 @@ img{
 .imgDetailCard{
     width:450px;
     height:370px;
+}
+
+.descripcion{
+    margin: 0px;
+    text-align: center;
+}
+
+.descripcion p{
+    margin-bottom: 0px;
 }
   
 footer{
