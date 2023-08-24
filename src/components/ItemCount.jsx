@@ -1,34 +1,69 @@
 import React from 'react'
-import {useState} from 'react'
-import {Box} from "@chakra-ui/react"
-import {Button,ButtonGroup} from "@chakra-ui/react";
+import {useState, useContext} from 'react'
+import {Flex} from "@chakra-ui/react"
+import { Link } from 'react-router-dom'
+import {ButtonGroup} from "@chakra-ui/react";
+import { CartContext } from '../context/ShoppingCartContext';
+import Count from './Count';
 
-const ItemCount = () => {
 
-    const [counter,setCounter]=useState(0)
 
-    if(counter<0){
-        setCounter(0);
+const ItemCount = ({stock, id, precio, nombre, imagen, descripcion}) => {
+
+    const {setCart} = useContext(CartContext);
+    const [count,setCount] = useState(1);
+
+    const addQty =() =>{
+        if(count<stock){
+        setCount(count+1)
+        }
+    }
+        
+
+    const substractQty =() =>{
+        if(count > 1) {
+        setCount(count-1)
+        }
+        
     }
 
-    const sumar=()=>{
-        setCounter(counter+1)
-    }
+    const addToCart =()=>{
 
-    const restar=()=>{
-        setCounter(counter-1)
-    }
+        setCart((currItems)=>{
+
+            const isItemFound =currItems.find((item)=> item.id ===id);
+
+            if(isItemFound){
+                return currItems.map((item)=> {
+
+                    if(item.id ===id){
+                        return { ...item, quantity: item.quantity + count };
+                    }else {
+                        return item;
+                    }
+                });
+            } else {
+                return [...currItems, { id, quantity: count, precio, nombre, imagen, descripcion, stock}];
+          }
+
+        });
+    };
+
 
     return (
 
         <>  
-            <Box className="counter"><p>{counter}</p></Box>
-            <ButtonGroup className="btnItemCount" spacing='2'>    
-                <Button onClick={sumar} variant='outline' colorScheme='facebook'>+</Button>
-                <Button variant='solid' colorScheme='facebook'>Agregar al carrito</Button>
-                <Button onClick={restar} variant='outline' colorScheme='facebook'>-</Button>
+            <ButtonGroup className="btnItemCount">
+
+                <Count count={count} addQty={addQty} substractQty={substractQty}  stock={stock}></Count>
+
+                <Flex className="btnAddToCart">
+                    <Link to={`/Cart`}>
+                        <button  onClick={()=>addToCart()} className="btnAgregar">Agregar al carrito</button>
+                    </Link>
+                </Flex>      
             </ButtonGroup>
-          
+      
         </>
     )
 }

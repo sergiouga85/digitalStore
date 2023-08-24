@@ -1,40 +1,37 @@
 import React from 'react'
-import {useParams} from 'react-router-dom'
 import ItemCount from './ItemCount'
-import {Card, CardBody, CardFooter, Heading, Stack,Text ,Box} from "@chakra-ui/react";
+import {useParams} from 'react-router-dom'
+import {Card, CardBody, CardFooter, Stack} from "@chakra-ui/react";
 
 const ItemDetail = ({productos}) => {
   
   const {id}=useParams();
-
-  const filteredProducts=productos.filter((producto)=>producto.id==id)
+  console.log(id)
 
   return (
-    <div>
-      {filteredProducts.map((p)=>{
-
-        return(
-          <div key={p.id} className="cardDetailContainer">
-            <Card className="cardDetail" maxW='sm'>
-              <CardBody>
-                <img className="imgDetailCard" src={p.imagen} alt='Arduino Uno' />
-                <Stack className="descripcion" mt='6' >
-                  <Heading size='md'>{p.nombre}</Heading>
-                  <Text fontSize='xl'>{p.descripcion}</Text>
-                  <Text>STOCK</Text>
-                <Text fontSize='xl'>{p.stock}</Text>
+    <>
+      {
+          <div key={id} className="cardDetailContainer">
+            <Card className="cardDetail">
+              <CardBody className="Cardbody">
+                <img className="imgDetailCard" src={productos.imagen} alt='Arduino Uno' />
+                <Stack className="descripcion">
+                  <h2>{productos.nombre}</h2>
+                  <h3>{productos.descripcion}</h3>
+                  <h3>STOCK</h3>
+                  <h3>{productos.stock}</h3>
                 </Stack>
               </CardBody>
-                <Text className="tituloStock">Unidades</Text>
+                <h2 className="tituloStock">Unidades</h2>
               <CardFooter className="CardFooterDetail">
-              <ItemCount></ItemCount>
+                 <ItemCount id={id} nombre={productos.nombre} precio={productos.precio} stock={productos.stock} imagen={productos.imagen} descripcion={productos.descripcion} />
               </CardFooter>  
             </Card>
           </div>
-        )
-      })}
-    </div>
-  )
+      }
+
+  </>
+)
 }
 
 export default ItemDetail
