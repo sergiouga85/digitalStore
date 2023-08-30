@@ -7,6 +7,8 @@ import {Flex,Box} from "@chakra-ui/react"
 
 const Cart = () => {
 
+
+
   const {cart, setCart} = useContext (CartContext);
 
   const onDeleteProducto=(id)=>{
@@ -51,11 +53,13 @@ const Cart = () => {
     }
   };
 
-  console.log(cart)
+ 
 
   return cart.map((producto)=> {
 
   return (
+
+  
     
       <div className="mainCart" key={producto.id}>
         <div className="gridCartContainer">
@@ -93,14 +97,17 @@ const Cart = () => {
           <div className="bf-ui-separator cartItem" data-js="separator" data-id="separator_0"></div>
 
           <div className="cartItem">
-            <h2>Total : ${producto.precio * producto.quantity}</h2>
+            <h2>Subtotal : ${producto.precio * producto.quantity}</h2>
           </div>
-          
-          
+             
         </div>
         
       </div> 
-    
+
+  
+
+      
+  
   );
 });
 };

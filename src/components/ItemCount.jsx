@@ -8,24 +8,12 @@ import Count from './Count';
 
 
 
-const ItemCount = ({stock, id, precio, nombre, imagen, descripcion}) => {
+const ItemCount = ({stock, id, precio, nombre, imagen, descripcion,stockUpdate}) => {
 
-    const {setCart} = useContext(CartContext);
-    const [count,setCount] = useState(1);
-
-    const addQty =() =>{
-        if(count<stock){
-        setCount(count+1)
-        }
-    }
-        
-
-    const substractQty =() =>{
-        if(count > 1) {
-        setCount(count-1)
-        }
-        
-    }
+    const {cart,setCart} = useContext(CartContext);
+    
+    const {count,setCount} = useContext(CartContext);
+   
 
     const addToCart =()=>{
 
@@ -47,7 +35,11 @@ const ItemCount = ({stock, id, precio, nombre, imagen, descripcion}) => {
           }
 
         });
+
+        
     };
+
+  
 
 
     return (
@@ -55,10 +47,10 @@ const ItemCount = ({stock, id, precio, nombre, imagen, descripcion}) => {
         <>  
             <ButtonGroup className="btnItemCount">
 
-                <Count count={count} addQty={addQty} substractQty={substractQty}  stock={stock}></Count>
+                <Count stockUpdate={stockUpdate} stock={stock}></Count>
 
                 <Flex className="btnAddToCart">
-                    <Link to={`/Cart`}>
+                    <Link to={`/Checkout`}>
                         <button  onClick={()=>addToCart()} className="btnAgregar">Agregar al carrito</button>
                     </Link>
                 </Flex>      

@@ -19,7 +19,7 @@ const NavBar = () => {
         <Flex className="logotipo">
             <Navbar.Brand as={Link} to={`/`} href="#"><img src={logo} alt="logo" /></Navbar.Brand>
 
-            <Link to={`/Cart`} className="cartwidget" >
+            <Link to={`/Checkout`} className="cartwidget" >
                 <CartWidget  background-color="white" />
             </Link>
         </Flex>
