@@ -46,6 +46,103 @@
 
 }
 
+.leyendaContainer, .parrafoNumeroDeOrden{
+    padding-top: 20px;
+    margin: 0 auto;
+    width:450px;
+}
+
+
+.formulario {
+    background-color: rgb(246, 246, 246);
+    width:450px;
+    margin: 0 auto;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;  
+    padding-bottom: 20px;
+}
+
+.formularioPie {
+    background-color: rgb(246, 246, 246);
+    width:450px;
+    margin: 0 auto;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;  
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+
+
+.container-formulario{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+
+.formulario fieldset {
+    border:none;
+
+}
+
+.formulario legend {
+    color: #ffff;
+    text-align:left;
+    font-size:18px;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 10px;
+
+}
+
+.campo label{
+    color: rgb(33, 37, 41);
+    font-weight:bold;
+    margin-bottom: 5px;
+    display: block; 
+}
+
+
+
+.input{
+    width: 100%;
+    border: 1px solid black;
+    padding-left: 5px;
+}
+
+.inputp{
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 5px;
+    height: 25px;
+}
+
+
+
+.inputOrden{
+    width: 72%;
+    border: 1px solid black;
+    padding-left: 5px;
+}
+
+.botonEnviar {
+    background-color:  rgb(33, 37, 41) ;
+    color:#ffff;
+    font-size: 20px;
+    padding: 10px 30 px;
+    margin-top: 30px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
 
 
 .mainCart{

@@ -8,6 +8,7 @@ const SendOrder = () => {
 
     const {cart, setCart} = useContext (CartContext);
     const [nombre, setNombre]=useState("")
+    const [apellido, setApellido]=useState("")
     const [email, setEmail]=useState("")
     const [orderId, setOrderId]=useState(null)
 
@@ -37,6 +38,7 @@ const SendOrder = () => {
   
     const order={
         nombre,
+        apellido,
         email,
         items,
         total
@@ -47,16 +49,46 @@ const SendOrder = () => {
 
     
   return (
-    <div>
-        <h1>Orden de compra</h1>
-        <form onSubmit={handleSubmit}>
-            <label>nombre y Apellido: </label>
-            <input type='text' placeholder='Nombre y Apellido'onChange={(e)=> setNombre(e.target.value)}></input>
-            <label>Email: </label>
-            <input type='text' placeholder='Email'onChange={(e)=> setEmail(e.target.value)}></input>
-            <button type="submit">Enviar</button>
-        </form>
-        <p>Número de orden:{orderId}</p>
+
+    <div >
+
+         <div className="leyendaContainer">
+            <p className="parrafo-item">En el momento que usted complete y nos envíe sus datos se gestionara su pedido de compra. Nuevamente Gracias!</p>
+        </div>
+
+        <div >
+            <div className="container-formulario">
+                <form className="formulario" onSubmit={handleSubmit}>
+                    <h3>ORDEN DE COMPRA</h3>
+                    <div>
+                        <div className="campo"> 
+                            <label form="Nombre">Nombre</label>
+                            <input className="input" type='text' placeholder='Nombre'onChange={(e)=> setNombre(e.target.value)}></input>
+                        </div>
+                        <div className="campo"> 
+                            <label form="Apellido">Apellido</label>
+                            <input className="input" type='text' placeholder='Apellido'onChange={(e)=> setApellido(e.target.value)}></input>
+                        </div>
+                    
+                        <div className="campo">
+                            <label form="email">Email</label>
+                            <input className="input" type='text' placeholder='Email'onChange={(e)=> setEmail(e.target.value)}></input>
+                        </div>   
+                    </div>
+                    <div>
+                        <button className="botonEnviar" type="submit">Enviar</button>
+                    </div>  
+                </form>     
+            </div>
+            
+                <form className="formularioPie">
+                    <div  className="campo">
+                        <label form="numerOrden">Número de orden:</label>
+                        <p className="inputp">{orderId}</p>
+                    </div>
+                </form>
+            
+        </div>
     </div>
   )
 }
