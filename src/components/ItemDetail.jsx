@@ -13,10 +13,10 @@ const ItemDetail = ({productos}) => {
 
   const isItemFound =cart.filter((item)=> item.id ===id);
   const quantityProducto=isItemFound.reduce((acc,curr)=>{
-  return acc+curr.quantity;
-},0);
+    return acc+curr.quantity;
+  },0);
 
-const stockUpdate=(productos.stock-quantityProducto)
+  const stockUpdate=(productos.stock-quantityProducto)
 
   
 
