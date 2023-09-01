@@ -87,7 +87,7 @@ const Cart = () => {
 
           <Flex className="btnCounter">
             <button onClick={()=>onIncremento(producto)} className="btnSignos">+</button>
-            <Box className="counter"><p>{producto.quantity}</p></Box>
+            <Box className="counter"><h3>{producto.quantity}</h3></Box>
             <button onClick={()=>onDecremento(producto)} className="btnSignos">-</button>
           </Flex>
           </div>
