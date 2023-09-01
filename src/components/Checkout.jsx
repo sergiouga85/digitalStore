@@ -1,9 +1,11 @@
 import React from 'react'
 import{useContext} from 'react'
+import { Flex} from "@chakra-ui/react";
 import { Link } from 'react-router-dom'
 import {CartContext} from '../context/ShoppingCartContext'
 import Cart from './Cart'
 import Footer from './Footer'
+import carritoVacio from '../assets/img/carritoVacio.png'
 
 const Checkout = () => {
 
@@ -19,8 +21,13 @@ const Checkout = () => {
 
 
   return (
-       <>
-            <Cart></Cart>
+
+       <>  
+        {cart.length <=0 ?
+            <div className="carritoVacioConatiner">
+                <img className="carritoVacioImg" src={carritoVacio} alt="carritoVacio"/>
+                <h6 className="parrafoCarritoVacio">No hay productos en el carrito</h6>
+            </div>:<Cart></Cart>}
             <div className="gridCheckoutContainer">
                 <div className="CkeckoutItem">
                     <h5>Resumen de compra</h5>

@@ -12,11 +12,7 @@ import Footer from './Footer'
 const ItemDetailContainer = () => {
 
   const {id}=useParams();
-  console.log(id)
-
   const [productos, setProductos]=useState ([]);
-  
-
   console.log(productos);
 
    

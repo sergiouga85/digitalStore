@@ -4,6 +4,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Flex, Box } from '@chakra-ui/react';
 import {useContext} from 'react'
 import { CartContext } from '../context/ShoppingCartContext';
+import carrito from '../assets/img/carrito.png'
 
 
 const CartWidget = () => {
@@ -18,7 +19,7 @@ const CartWidget = () => {
     return (
         <Flex>
             <Box>
-                <FontAwesomeIcon className="carrito" icon={faCartShopping} />
+                <img className="carritoImg" src={carrito} alt="carrito"/>
             </Box>
             <Box className="contadorCarrito">
                 <h3>{quantity}</h3>

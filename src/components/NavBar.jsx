@@ -1,18 +1,14 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
 import{useContext} from 'react'
-import { Flex, Box} from "@chakra-ui/react";
+import {Flex} from "@chakra-ui/react";
 import logo from '../assets/img/logo2.png'
 import CartWidget from './CartWidget';
 import { Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import {CartContext} from '../context/ShoppingCartContext'
+
 
 
 const NavBar = () => {
-
-    const {cart, setCart, longitud} = useContext (CartContext)
-
-   
 
     return (
         <>
@@ -33,7 +29,7 @@ const NavBar = () => {
                             <NavDropdown.Item as={Link} to={`/categoria/Modulos y componentes electrónicos`} href="#action/3.3">Modulos y componentes electrónicos</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </NavDropdown>
-                        <Nav.Link className="link" href="#">CONTACTO</Nav.Link> 
+                        <Nav.Link as={Link} to={`/contact`} className="link" href="#">CONTACTO</Nav.Link> 
                     </Nav>  
             </Navbar>
 

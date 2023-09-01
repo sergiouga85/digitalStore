@@ -29,8 +29,36 @@ h3{
     padding-bottom: 40px;
 }
 
+.carritoVacioConatiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto ;
+    width: 20%;
+    height: 60%;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+.carritoVacioImg{
+    width: 100%;
+    height:20%;
+    padding-bottom: 20px;
+}
+
+.parrafoCarritoVacio{
+    color: black;
+    padding-left: 60px;
+    width: 100%;
+}
+
+
 .cartwidget{
     padding-left: 20%;
+}
+.carritoImg{
+    width: 40px;
+    height: 30px;
 }
 
 .titulosCarousel h3{
@@ -80,14 +108,11 @@ h3{
 
 }
 
-
-
 .leyendaContainer, .parrafoNumeroDeOrden{
     padding-top: 20px;
     margin: 0 auto;
-    width:450px;
+    width:550px;
 }
-
 
 .formulario {
     background-color: rgb(246, 246, 246);
@@ -110,14 +135,10 @@ h3{
     margin-bottom: 40px;
 }
 
-
-
 .container-formulario{
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
 }
-
-
 
 .formulario fieldset {
     border:none;
@@ -143,8 +164,6 @@ h3{
     display: block; 
 }
 
-
-
 .input{
     width: 100%;
     border: 1px solid black;
@@ -158,8 +177,6 @@ h3{
     padding-left: 5px;
     height: 25px;
 }
-
-
 
 .inputOrden{
     width: 72%;
@@ -178,8 +195,6 @@ h3{
     width: 100%;
     text-align: center;
 }
-
-
 
 .mainCart{
     gap: 25px;
@@ -243,8 +258,6 @@ img{
     border-radius: 5px;
 }
 
-
-
 .btnDetalles {
     color: white;
     font-size: 18px;
@@ -261,7 +274,6 @@ img{
    height: 40px;
    justify-content: center;
    border-radius: 5px;
-   
 }
 
 .btnCheckout{
@@ -302,7 +314,6 @@ img{
     align-items: center;
     height:200px ;
     width:250px;
-    
 }
 
 .cardDetailContainer{
@@ -328,7 +339,7 @@ img{
     margin: 0 auto ;
     justify-items: center;
     align-items: center;
-    max-width: 700px;
+    max-width: 600px;
     gap:10px;
     grid-template-columns:  150px 100px 100px 150px 100px;
     grid-template-rows: 40px 2px 100px 2px 35px;
@@ -409,7 +420,7 @@ img{
     margin: 0 auto ;
     justify-items: center;
     align-items: center;
-    max-width: 700px;
+    max-width: 600px;
     gap:10px;
     grid-template-columns:  320px 320px;
     grid-template-rows: 30px 2px 30px 30px;
@@ -575,8 +586,15 @@ img{
 .parrafoPie{
     display: flex;
     justify-content:center;
-    align-items: end;
-    
+    align-items: end;   
+}
+
+.parrafo-item{
+    color: black;   
+}
+
+.inputp{
+    color: black;
 }
 
 footer li a, footer li, p{

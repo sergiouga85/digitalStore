@@ -4,6 +4,8 @@ import {CartContext} from '../context/ShoppingCartContext'
 import {collection, addDoc,getFirestore} from 'firebase/firestore'
 import {useState} from 'react'
 import Footer from './Footer'
+import CarouselFadeExample from './CarouselFadeExample'
+import swal from 'sweetalert'
 
 const SendOrder = () => {
 
@@ -15,13 +17,28 @@ const SendOrder = () => {
 
     const db = getFirestore()
 
+    const orderCollection= collection(db,"orden")
 
     const handleSubmit=(e)=>{
         e.preventDefault()
         addDoc(orderCollection, order).then(({id})=>
         setOrderId(id))
-        setCart([])   
+        setCart([])
+        handleBuy() 
+
     }
+
+    const handleBuy=()=>{
+
+        swal({   
+            title:"La orden de compra fue enviada correctamente.",
+            text: `copie el numero de orden que figura mas abajo para efectuar el pago`,
+            icon:"success",
+            button:"Aceptar"
+        });
+    }
+
+  
 
     const quantity=cart.reduce((acc,curr)=>{
         return acc +curr.quantity;
@@ -31,29 +48,28 @@ const SendOrder = () => {
         return acc +curr.precio;
     },0);
 
-    const total= `'$${(precio*quantity)}`;
+    
 
     const items=cart.map((item)=>item={nombre: item.nombre, cantidad: item.quantity, precio: item.precio})
+    const precioTotal= `'$${(precio*quantity)}`;
  
     console.log(items);
   
     const order={
-        nombre,
-        apellido,
-        email,
-        items,
-        total
+        comprador:{nombre,apellido,email},
+        productos:{items},
+        importe:{precioTotal}
     }
     
-   
-    const orderCollection= collection(db,"orden")
-
     
   return (
 
     <div >
+        <div className="mainCarousel">
+            <CarouselFadeExample></CarouselFadeExample>
+        </div>
 
-         <div className="leyendaContainer">
+        <div className="leyendaContainer">
             <p className="parrafo-item">En el momento que usted complete y nos envíe sus datos se gestionara su pedido de compra. Nuevamente Gracias!</p>
         </div>
 
@@ -81,13 +97,13 @@ const SendOrder = () => {
                     </div>  
                 </form>     
             </div>
-            
             <form className="formularioPie">
                 <div  className="campo">
                     <label form="numerOrden">Número de orden:</label>
                     <p className="inputp">{orderId}</p>
                 </div>
             </form>
+            
             
         </div>
         <Footer></Footer>
