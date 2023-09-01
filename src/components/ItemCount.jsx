@@ -1,21 +1,63 @@
 import React from 'react'
-import {useState, useContext} from 'react'
-import {Flex} from "@chakra-ui/react"
-import { Link } from 'react-router-dom'
+import {useContext} from 'react'
+import {Flex,Box} from "@chakra-ui/react"
 import {ButtonGroup} from "@chakra-ui/react";
-import { CartContext } from '../context/ShoppingCartContext';
-import Count from './Count';
+import {CartContext } from '../context/ShoppingCartContext';
+import {useState} from 'react'
+import swal from 'sweetalert'
+
 
 
 
 const ItemCount = ({stock, id, precio, nombre, imagen, descripcion,stockUpdate}) => {
 
-    const {cart,setCart} = useContext(CartContext);
+
     
-    const {count,setCount} = useContext(CartContext);
-   
+    const {cart,setCart} = useContext(CartContext);
+    const [count,setCount] = useState(0);
+
+
+  const addQty =() =>{
+        
+        if(count<stockUpdate){
+            setCount(count+1)
+        }
+    }   
+
+    const substractQty =() =>{
+
+        if(count>0){
+            setCount(count-1)
+        }
+    }
+
+    if(cart.length>0){
+
+        if(parseInt(stockUpdate)<count){
+            setCount(stockUpdate)
+        }
+
+    }
 
     const addToCart =()=>{
+
+        swal({   
+            title:"El producto fue agregado !!!",
+            text: "Para ver el detalle haga click en el carrito ",
+            icon:"success",
+            button:"Aceptar"
+        });
+
+        if(stockUpdate==0){
+
+            swal({   
+                title:"No Hay stock del producto!!!",
+                text: "En breve habra stock disponible",
+                icon:"error",
+                button:"Aceptar"
+            });
+
+        }
 
         setCart((currItems)=>{
 
@@ -35,27 +77,23 @@ const ItemCount = ({stock, id, precio, nombre, imagen, descripcion,stockUpdate})
           }
 
         });
-
         
     };
-
-  
-
 
     return (
 
         <>  
+            
             <ButtonGroup className="btnItemCount">
-
-                <Count stockUpdate={stockUpdate} stock={stock}></Count>
-
-                <Flex className="btnAddToCart">
-                    <Link to={`/Checkout`}>
-                        <button  onClick={()=>addToCart()} className="btnAgregar">Agregar al carrito</button>
-                    </Link>
-                </Flex>      
+                <Flex className="btnCounter">
+                    <button className="btnSignos" onClick={()=>addQty()}>+</button>
+                    <Box className="counter"><h3>{count}</h3></Box>
+                    <button className="btnSignos" onClick={()=>substractQty()}>-</button>
+                </Flex>
+                <Flex className="btnAddToCart">   
+                    <button  onClick={()=>addToCart()} className="btnAgregar">Agregar al carrito</button> 
+                </Flex>    
             </ButtonGroup>
-      
         </>
     )
 }

@@ -3,10 +3,11 @@ import{useContext} from 'react'
 import { Link } from 'react-router-dom'
 import {CartContext} from '../context/ShoppingCartContext'
 import Cart from './Cart'
+import Footer from './Footer'
 
 const Checkout = () => {
 
-    const {cart, setCart} = useContext (CartContext);
+    const {cart} = useContext (CartContext);
 
     const quantity=cart.reduce((acc,curr)=>{
         return acc +curr.quantity;
@@ -20,14 +21,11 @@ const Checkout = () => {
   return (
        <>
             <Cart></Cart>
-            
             <div className="gridCheckoutContainer">
                 <div className="CkeckoutItem">
                     <h5>Resumen de compra</h5>
-                </div>
-                    
-                <div className="CkeckoutItem separadorResumen" data-js="separator" data-id="separator_0"/>
-                    
+                </div>      
+                <div className="CkeckoutItem separadorResumen" data-js="separator" data-id="separator_0"/>     
                 <div className="CkeckoutItem">
                     <h6>Productos ({quantity})</h6>
                 </div>
@@ -40,6 +38,7 @@ const Checkout = () => {
                     </Link> 
                 </div>  
             </div>
+            <Footer></Footer>
        
        </>
     

@@ -6,11 +6,11 @@ export const ShoppingCartProvider= ({children}) => {
 
     const [cart,setCart]= useState([])
 
-    const [count,setCount] = useState(0);
+    
 
   return (
 
-    <CartContext.Provider value={{cart, setCart, count,setCount}}>
+    <CartContext.Provider value={{cart, setCart}}>
 
         {children}
 

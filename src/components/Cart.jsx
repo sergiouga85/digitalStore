@@ -55,11 +55,11 @@ const Cart = () => {
 
  
 
-  return cart.map((producto)=> {
-
   return (
 
-  
+    <>
+    {
+      cart.map((producto)=> (
     
       <div className="mainCart" key={producto.id}>
         <div className="gridCartContainer">
@@ -102,14 +102,15 @@ const Cart = () => {
              
         </div>
         
-      </div> 
+      </div>
 
-  
+       ))
+      } 
 
       
-  
+    </>  
   );
-});
+  
 };
 
 export default Cart

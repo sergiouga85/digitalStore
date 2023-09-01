@@ -4,7 +4,8 @@ import {Flex} from "@chakra-ui/react"
 import {useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import {doc, getDoc,getFirestore} from 'firebase/firestore'
-
+import CarouselFadeExample from './CarouselFadeExample'
+import Footer from './Footer'
 
 
 
@@ -18,8 +19,7 @@ const ItemDetailContainer = () => {
 
   console.log(productos);
 
-  
-      
+   
   useEffect(()=>{
 
     const db =getFirestore()
@@ -33,12 +33,15 @@ const ItemDetailContainer = () => {
 }, []);
  
 
-
   return (
-    <> 
+    <>
+      <div className="mainCarousel">
+        <CarouselFadeExample></CarouselFadeExample>
+      </div>
       <Flex className="main">
         <ItemDetail productos={productos}></ItemDetail>
       </Flex>
+      <Footer></Footer>
     </>
   )
 }

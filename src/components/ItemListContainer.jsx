@@ -6,6 +6,7 @@ import {collection, getDocs,getFirestore,query,where} from 'firebase/firestore'
 import {Flex} from "@chakra-ui/react"
 import Loading from './Loading'
 import CarouselFadeExample from './CarouselFadeExample'
+import Footer from './Footer'
 
 const ItemListContainer = () => {
 
@@ -42,12 +43,13 @@ const ItemListContainer = () => {
   
   return (
     <>
-    <div className="mainCarousel">
-      <CarouselFadeExample></CarouselFadeExample>
-    </div>
-    <Flex className="main">
-      <ItemList productos={productos}></ItemList>
-    </Flex>
+      <div className="mainCarousel">
+        <CarouselFadeExample></CarouselFadeExample>
+      </div>
+      <Flex className="main">
+        <ItemList productos={productos}></ItemList>
+      </Flex>
+      <Footer></Footer>
     </>
     
   )

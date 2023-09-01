@@ -3,6 +3,7 @@ import{useContext} from 'react'
 import {CartContext} from '../context/ShoppingCartContext'
 import {collection, addDoc,getFirestore} from 'firebase/firestore'
 import {useState} from 'react'
+import Footer from './Footer'
 
 const SendOrder = () => {
 
@@ -81,14 +82,15 @@ const SendOrder = () => {
                 </form>     
             </div>
             
-                <form className="formularioPie">
-                    <div  className="campo">
-                        <label form="numerOrden">Número de orden:</label>
-                        <p className="inputp">{orderId}</p>
-                    </div>
-                </form>
+            <form className="formularioPie">
+                <div  className="campo">
+                    <label form="numerOrden">Número de orden:</label>
+                    <p className="inputp">{orderId}</p>
+                </div>
+            </form>
             
         </div>
+        <Footer></Footer>
     </div>
   )
 }
