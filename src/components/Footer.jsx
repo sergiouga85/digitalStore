@@ -4,38 +4,55 @@ import { Link} from 'react-router-dom'
 const Footer = () => {
   return (
 
-    <footer className="footerContainer">
-      <div className="">
-        <ul>
-            <li>DigitalStore</li>
-            <Link  as={Link} to={`/`} className="link">
-                <li>Inicio</li>
-            </Link>
-        
-            <li>Productos</li>
-            <Link  as={Link} to={`/categoria/Placas de desarrollo`}>
-                <li>Placas de desarrollo</li>
-            </Link>
-            <Link  as={Link} to={`/categoria/Herramientas e instrumental electrónico`}>
-                <li>Herramientas e instrumental electrónico</li>
-            </Link>
-            <Link  as={Link} to={`/categoria/Modulos y componentes electrónicos`}>
-                <li>Modulos y componentes electrónicos</li>
-            </Link>
-          <li>Contacto</li>
-        </ul>
+    <footer className="gridFooterContainer">
+      <div className="itemFooter">  
+        <h6>DigitalStore</h6>
       </div>
-      <div className="parrofoPie">
-        <p>© Digital Store, todos los derechos reservados. Sergio Ugarte Front end Developer</p>
+      <div className="itemFooter">
+        <Link  as={Link} to={`/`}>
+          <h6>Inicio</h6>
+        </Link>
       </div>
-      <div>
-        <ul>
-          <li>info@digitalstore.com.ar</li>
-          <li>Pieres 351, C1408HDE CABA, Capital Federal</li>
-          <li>+5491168589850</li>
-        </ul>
-      </div>  
-      </footer>    
+      <div className="itemFooter">
+        <h6>Productos</h6>
+      </div>
+      <div className="itemFooter">
+        <Link  as={Link} to={`/categoria/Placas de desarrollo`}>
+          <h6>Placas de desarrollo</h6>
+        </Link>
+      </div>
+      <div className="itemFooter">
+        <Link  as={Link} to={`/categoria/Herramientas e instrumental electrónico`}>
+          <h6>Herramientas e instrumental </h6>
+        </Link>    
+      </div>       
+      <div className="itemFooter">
+        <Link  as={Link} to={`/categoria/Modulos y componentes electrónicos`}>
+          <h6>Modulos y componentes </h6>
+        </Link>
+      </div>      
+      <div className="itemFooter"> 
+        <Link  as={Link} to={`/contact`}>
+          <h6>Contacto</h6>
+        </Link>
+      </div>
+      <div className="itemFooter">
+        <h6>© Digital Store, todos los derechos reservados. Sergio Ugarte Front end Developer</h6>
+      </div>
+      <div className="itemFooter">
+        <h6>info@digitalstore.com.ar</h6>
+      </div> 
+      <div className="itemFooter">
+        <h6>Pieres 351</h6>
+      </div>
+      <div className="itemFooter">
+        <h6>C1408HDE CABA, Capital Federal</h6>
+      </div>
+      <div className="itemFooter">
+        <h6>+5491168589850</h6>
+      </div>   
+      
+    </footer>    
   )
 }
 

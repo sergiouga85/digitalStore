@@ -25,8 +25,12 @@ const Checkout = () => {
        <>  
         {cart.length <=0 ?
             <div className="carritoVacioConatiner">
-                <img className="carritoVacioImg" src={carritoVacio} alt="carritoVacio"/>
-                <h6 className="parrafoCarritoVacio">No hay productos en el carrito</h6>
+                <div className="carritoItem">
+                    <img className="carritoVacioImg" src={carritoVacio} alt="carritoVacio"/>
+                </div>
+                <div className="carritoItem">
+                    <h6 className="parrafoCarritoVacio">No hay productos en el carrito</h6>
+                </div>    
             </div>:<Cart></Cart>}
             <div className="gridCheckoutContainer">
                 <div className="CkeckoutItem">
@@ -39,6 +43,7 @@ const Checkout = () => {
                 <div className="CkeckoutItem">       
                     <h4>TOTAL $ {precio*quantity}</h4>
                 </div>
+                <div className="CkeckoutItem separadorResumen" data-js="separator" data-id="separator_0"/>
                 <div className="CkeckoutItem">
                     <Link to={`/SendOrder`}> 
                         <button className="btnCheckout" >Finalizar compra</button>

@@ -21,9 +21,12 @@ const CartWidget = () => {
             <Box>
                 <img className="carritoImg" src={carrito} alt="carrito"/>
             </Box>
+            { quantity<10?
             <Box className="contadorCarrito">
                 <h3>{quantity}</h3>
-            </Box>
+            </Box>:<Box className="contadorMayor">
+                <h3>{quantity}</h3>
+            </Box>}
         </Flex>
     )
 }
