@@ -1,7 +1,7 @@
 # DigitalStore
 Proyecto React de CoderHouse
 
-Este es un tienda digital que se dedica a la comercialización de componentes y modulos de electrónica para tecnicos,  hobistas y desarrolladores IoT. 
+Esta es un tienda digital que se dedica a la comercialización de componentes y modulos de electrónica para tecnicos,  hobistas y desarrolladores IoT. 
 Ventas por mayor y menor a todo el pais.
 
 Para el desarrollo del proyecto se ultilizaron la libreria de React js de javascript tambien se hizo uso de las librerias de Chackra UI, React bootstrap y sweetalert para el desarrollo del proyecto.
